@@ -1,0 +1,619 @@
+:root {
+    --azul-principal: #2563eb;
+    --azul-oscuro: #1e3a8a;
+    --azul-claro: #eff6ff;
+
+    --texto: #1e293b;
+    --texto-secundario: #64748b;
+
+    --fondo: #f8fafc;
+    --blanco: #ffffff;
+    --borde: #dbe4ef;
+
+    --radio: 12px;
+
+    --pico-primary: var(--azul-principal);
+    --pico-primary-hover: var(--azul-oscuro);
+    --pico-primary-focus: rgba(37, 99, 235, 0.25);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background-color: var(--fondo);
+
+    color: var(--texto);
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+
+.encabezado {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--borde);
+}
+
+
+.encabezado nav {
+    min-height: 75px;
+
+    padding-top: 10px;
+
+    padding-bottom: 10px;
+}
+
+
+.encabezado strong {
+    color: var(--azul-oscuro);
+
+    font-size: 18px;
+}
+
+
+
+.encabezado nav a {
+    color: var(--texto);
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+
+.encabezado nav a:hover {
+    color: var(--azul-principal);
+}
+
+
+.presentacion {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    min-height: 480px;
+
+    padding-top: 70px;
+
+    padding-bottom: 70px;
+}
+
+
+.saludo {
+    margin-bottom: 8px;
+
+    color: var(--azul-principal);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.presentacion h1 {
+    margin-bottom: 12px;
+
+    color: var(--azul-oscuro);
+
+    font-size: clamp(38px, 6vw, 62px);
+
+    line-height: 1.1;
+}
+
+
+.presentacion h2 {
+    margin-bottom: 20px;
+
+    color: var(--texto-secundario);
+
+    font-size: clamp(20px, 3vw, 28px);
+
+    font-weight: 500;
+
+    line-height: 1.4;
+}
+
+
+
+.presentacion > div > p:not(.saludo) {
+    max-width: 700px;
+
+    margin-bottom: 25px;
+
+    color: var(--texto-secundario);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.presentacion a[role="button"] {
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.presentacion a[role="button"]:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(37, 99, 235, 0.18);
+}
+
+
+.datos-personales {
+    padding: 28px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: var(--radio);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+.datos-personales h3 {
+    margin-bottom: 22px;
+
+    color: var(--azul-oscuro);
+}
+
+
+.datos-personales p {
+    margin-bottom: 0;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--borde);
+
+    color: var(--texto-secundario);
+}
+
+
+.datos-personales p:last-child {
+    border-bottom: none;
+}
+
+
+.datos-personales strong {
+    color: var(--texto);
+}
+
+
+main > section:not(.presentacion) {
+    padding-top: 60px;
+
+    padding-bottom: 60px;
+
+    border-top: 1px solid var(--borde);
+}
+
+
+main section > h2 {
+    position: relative;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 12px;
+
+    color: var(--azul-oscuro);
+
+    font-size: clamp(27px, 4vw, 35px);
+}
+
+
+
+main section > h2::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 55px;
+
+    height: 4px;
+
+    background-color: var(--azul-principal);
+
+    border-radius: 5px;
+}
+
+article {
+    border: 1px solid var(--borde);
+
+    border-radius: var(--radio);
+
+    box-shadow: none;
+}
+
+
+article h3 {
+    color: var(--azul-oscuro);
+}
+
+#perfil article {
+    padding: 30px;
+
+    background-color: var(--blanco);
+}
+
+
+#perfil article p {
+    line-height: 1.8;
+
+    color: var(--texto-secundario);
+}
+
+
+#perfil article p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.tarjetas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.tarjetas article {
+    margin: 0;
+
+    padding: 28px;
+
+    background-color: var(--blanco);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tarjetas article:hover {
+    transform: translateY(-5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+.tarjetas article h3 {
+    margin-bottom: 12px;
+}
+
+
+.tarjetas article p {
+    color: var(--texto-secundario);
+
+    line-height: 1.6;
+}
+
+
+.tarjetas article a {
+    color: var(--azul-principal);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.tarjetas article a:hover {
+    text-decoration: underline;
+}
+
+
+#experiencia article {
+    padding: 30px;
+
+    background-color: var(--blanco);
+}
+
+
+#experiencia article > p {
+    color: var(--texto-secundario);
+}
+
+
+#experiencia li {
+    margin-bottom: 8px;
+}
+
+
+.habilidades-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.habilidades-grid article {
+    margin: 0;
+
+    padding: 25px;
+
+    background-color: var(--blanco);
+
+    border-left: 4px solid var(--azul-principal);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.habilidades-grid article:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+
+.habilidades-grid h3 {
+    margin-bottom: 10px;
+}
+
+
+.habilidades-grid p {
+    margin-bottom: 0;
+
+    color: var(--texto-secundario);
+
+    line-height: 1.6;
+}
+
+
+#cursos article {
+    padding: 30px;
+
+    background-color: var(--blanco);
+}
+
+
+#cursos ul {
+    margin-bottom: 0;
+}
+
+
+#cursos li {
+    margin-bottom: 10px;
+}
+
+
+.contacto {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* Información */
+
+.contacto article {
+    margin: 0;
+
+    padding: 30px;
+
+    background-color: var(--azul-claro);
+}
+
+
+.contacto article h3 {
+    margin-bottom: 25px;
+}
+
+
+.contacto article p {
+    margin-bottom: 18px;
+
+    color: var(--texto-secundario);
+}
+
+
+.contacto article strong {
+    color: var(--texto);
+}
+
+
+.contacto form {
+    margin: 0;
+
+    padding: 30px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: var(--radio);
+}
+
+
+.contacto input,
+.contacto textarea {
+    border-radius: 8px;
+}
+
+
+.contacto textarea {
+    resize: vertical;
+}
+
+
+.contacto button {
+    width: 100%;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+
+a {
+    transition: color 0.2s ease;
+}
+
+
+@media (max-width: 900px) {
+
+    .presentacion {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: 30px;
+    }
+
+
+    .datos-personales {
+        max-width: 600px;
+    }
+
+
+    .contacto {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+@media (max-width: 700px) {
+
+
+    .encabezado nav {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .encabezado nav ul {
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+
+    .presentacion {
+        padding-top: 45px;
+
+        padding-bottom: 45px;
+    }
+
+
+    .presentacion h1 {
+        font-size: 38px;
+    }
+
+
+    .presentacion h2 {
+        font-size: 21px;
+    }
+
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Habilidades */
+
+    .habilidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    main > section:not(.presentacion) {
+        padding-top: 45px;
+
+        padding-bottom: 45px;
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .presentacion h1 {
+        font-size: 32px;
+    }
+
+
+    .datos-personales,
+    .tarjetas article,
+    .habilidades-grid article,
+    #perfil article,
+    #experiencia article,
+    #cursos article,
+    .contacto article,
+    .contacto form {
+        padding: 20px;
+    }
+
+
+    main section > h2 {
+        font-size: 26px;
+    }
+
+
+    .presentacion a[role="button"] {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
